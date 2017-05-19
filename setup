@@ -1,0 +1,33 @@
+#!/usr/bin/python
+
+import os
+
+# os.environ["DEBUG"] = "echo"
+modules = os.environ["MODULES"]
+
+def intro(module):
+    print
+    print
+    print("****************************************")
+    print("Installing " + module)
+    print("****************************************")
+
+def run(modules):
+    list = modules.split(" ")
+
+    for module in list:
+        file = module.split(":")
+        version = ""
+        filename = file[0]
+
+        if(len(file) > 1):
+            version = file[1]
+
+        intro(module)
+        if os.path.isfile("modules/" + filename+ ".sh"):
+            os.system("bash modules/" + filename + ".sh " + version )
+        else:
+            print("WARNING : Do not found " + module)
+
+
+run(modules)
