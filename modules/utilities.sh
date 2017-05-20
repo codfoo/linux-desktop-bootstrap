@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --force-yes libmcrypt4 unzip whois curl
+    $DEBUG sudo apt-get install -y --force-yes libmcrypt4 unzip whois curl git
 }
 
 _run_() {
