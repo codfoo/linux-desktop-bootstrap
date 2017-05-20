@@ -7,8 +7,8 @@
 _run_default() {
     # Commands
     $DEBUG sudo apt-get install -y --force-yes supervisor
-    $DEBUG systemctl enable supervisor.service
-    $DEBUG service supervisor start
+    $DEBUG sudo systemctl enable supervisor.service
+    $DEBUG sudo service supervisor start
 }
 
 _run_() {
