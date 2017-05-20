@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --force-yes apache2
+    $DEBUG sudo apt-get install -y --allow apache2
 }
 
 _run_() {

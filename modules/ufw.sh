@@ -6,7 +6,7 @@
 
 _run_default() {
     # Commands
-    $DEBUG sudo apt-get install -y --force-yes ufw
+    $DEBUG sudo apt-get install -y --allow ufw
 }
 
 _run_() {

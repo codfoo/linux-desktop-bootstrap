@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --force-yes mysql-server
+    $DEBUG sudo apt-get install -y --allow mysql-server
 }
 
 _run_() {
