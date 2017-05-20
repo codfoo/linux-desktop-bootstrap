@@ -10,21 +10,21 @@ _run_default() {
 
     $DEBUG sudo pecl install mongodb
 
-    $DEBUG php_version = $(php -v | grep -oP "PHP [0-9]+\.[0-9]+" | grep -oP "[0-9\.]+")
+    php_version="$(php -v | grep -oP 'PHP [0-9]+\.[0-9]+' | grep -oP '[0-9\.]+')"
 
     if [[ ! -z "$DEBUG" ]]; then
-		echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/apache2/conf.d/30-mongodb.ini'
-		echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/cli/conf.d/30-mongodb.ini'
-	    echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/fpm/conf.d/30-mongodb.ini'
-	else
-		echo "extension=mongodb.so" > /etc/php/${php_version}/apache2/conf.d/30-mongodb.ini
-		echo "extension=mongodb.so" > /etc/php/${php_version}/cli/conf.d/30-mongodb.ini
-	    echo "extension=mongodb.so" > /etc/php/${php_version}/fpm/conf.d/30-mongodb.ini
-	fi
+        echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/apache2/conf.d/30-mongodb.ini'
+        echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/cli/conf.d/30-mongodb.ini'
+        echo 'echo "extension=mongodb.so" > /etc/php/${php_version}/fpm/conf.d/30-mongodb.ini'
+    else
+        which apache2 && sudo echo "extension=mongodb.so" | sudo tee /etc/php/${php_version}/apache2/conf.d/30-mongodb.ini
+	sudo echo "extension=mongodb.so" | sudo tee /etc/php/${php_version}/cli/conf.d/30-mongodb.ini
+	which php-fpm${php_version} && sudo echo "extension=mongodb.so" | sudo tee /etc/php/${php_version}/fpm/conf.d/30-mongodb.ini
+    fi
 
-	$DEBUG sudo systemctl reload apache2
-	$DEBUG sudo systemctl reload nginx
-    $DEBUG sudo systemctl restart php7.0-fpm
+    $DEBUG which apache2 && sudo systemctl reload apache2
+    $DEBUG which nginx && sudo systemctl reload nginx
+    $DEBUG which php-fpm${php_version} && sudo systemctl restart php7.0-fpm
 }
 
 _run_() {
