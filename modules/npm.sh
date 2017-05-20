@@ -8,4 +8,4 @@ _run_() {
     $DEBUG sudo npm install -g $1
 }
 
-_run_
+_run_ $1

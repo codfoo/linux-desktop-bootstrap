@@ -25,6 +25,7 @@ def run(modules):
 
         intro(module)
         if os.path.isfile("modules/" + filename+ ".sh"):
+	    print("Run : bash modules/" + filename + ".sh " + version)
             os.system("bash modules/" + filename + ".sh " + version )
         else:
             print("WARNING : Do not found " + module)
