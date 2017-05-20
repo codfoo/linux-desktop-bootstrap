@@ -12,8 +12,8 @@ _run_default() {
 		curl -sS https://getcomposer.org/installer | php
 	fi
 
-	$DEBUG mv composer.phar /usr/local/bin/composer
-	$DEBUG chmod a+x /usr/local/bin/composer
+	$DEBUG sudo mv composer.phar /usr/local/bin/composer
+	$DEBUG sudo chmod a+x /usr/local/bin/composer
 }
 
 _run_() {
