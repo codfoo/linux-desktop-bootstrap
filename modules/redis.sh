@@ -6,7 +6,7 @@
 
 _run_default() {
     # Commands
-    $DEBUG sudo apt-get install -y --allow redis-server
+    $DEBUG sudo apt-get install --allow redis-server
 }
 
 _run_() {
