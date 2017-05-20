@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --force-yes php-mysql
+    $DEBUG sudo apt-get install -y --allow php-mysql
     $DEBUG sudo service apache2 restart
 }
 

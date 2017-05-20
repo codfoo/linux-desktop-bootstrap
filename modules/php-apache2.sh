@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --force-yes libapache2-mod-php
+    $DEBUG sudo apt-get install -y --allow libapache2-mod-php
     $DEBUG sudo service apache2 restart
 }
 

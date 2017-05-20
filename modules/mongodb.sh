@@ -14,7 +14,7 @@ _run_3.4() {
 		echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 	fi
 	$DEBUG sudo apt-get update
-	$DEBUG sudo apt-get install --force-yes -y mongodb-org
+	$DEBUG sudo apt-get install --allow -y mongodb-org
 	$DEBUG sudo service mongod start
 	$DEBUG sudo service mongod stop
 	$DEBUG sudo service mongod restart
