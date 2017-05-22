@@ -8,6 +8,7 @@ _run_default() {
     $DEBUG cd ~/Downloads
     $DEBUG wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     $DEBUG sudo dpkg -i google-chrome-stable_current_amd64.deb
+    $DEBUG sudo apt-get -f -y install
 }
 
 _run_() {

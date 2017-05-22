@@ -8,6 +8,7 @@ _run_default() {
     $DEBUG cd ~/Downloads
     $DEBUG wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
     $DEBUG sudo dpkg -i sublime-text_build-*_amd64.deb
+    $DEBUG sudo apt-get -f -y install
 }
 
 _run_() {
