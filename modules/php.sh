@@ -6,7 +6,7 @@
 
 _run_default() {
     # Commands
-    $DEBUG sudo apt-get install -y --allow php-cli php-dev php-sqlite3 php-gd \
+    $DEBUG sudo apt-get install -y --force-yes php-cli php-dev php-sqlite3 php-gd \
     			php-curl php-memcached php-imap php-mysql php-mbstring php-soap \
     			php-bcmath php-xml php-zip php-intl php-readline php-mcrypt
 }

@@ -5,7 +5,7 @@
 # description = ""
 
 _run_default() {
-    $DEBUG sudo apt-get install -y --allow pkg-config libcurl4-openssl-dev \
+    $DEBUG sudo apt-get install -y --force-yes pkg-config libcurl4-openssl-dev \
     		libssl-dev libsslcommon2-dev
 
     $DEBUG sudo pecl install mongodb

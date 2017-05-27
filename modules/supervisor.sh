@@ -6,7 +6,7 @@
 
 _run_default() {
     # Commands
-    $DEBUG sudo apt-get install -y --allow supervisor
+    $DEBUG sudo apt-get install -y --force-yes supervisor
     $DEBUG sudo systemctl enable supervisor.service
     $DEBUG sudo service supervisor start
 }
