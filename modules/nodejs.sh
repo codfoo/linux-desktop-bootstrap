@@ -9,15 +9,24 @@ _run_6.10.3() {
     $DEBUG wget https://nodejs.org/dist/v6.10.3/node-v6.10.3-linux-x64.tar.xz
 
     $DEBUG cd /usr/local/
-    $DEBUG sudo tar --strip-components=1 -xvf ~/Downloads/node-v*-linux-x64.tar.xz
+    $DEBUG sudo tar --strip-components=1 -xvf ~/Downloads/node-v6.10.3-linux-x64.tar.xz
+}
+
+_run_8.9.1() {
+    # https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz
+    $DEBUG cd  ~/Downloads
+    $DEBUG wget https://nodejs.org/dist/v8.9.1/node-v8.9.1-linux-x64.tar.xz
+
+    $DEBUG cd /usr/local/
+    $DEBUG sudo tar --strip-components=1 -xvf ~/Downloads/node-v8.9.1-linux-x64.tar.xz
 }
 
 _run_lts() {
-    _run_6.10.3
+    _run_8.9.1
 }
 
 _run_() {    
-    _run_6.10.3
+    _run_8.9.1
 }
 
 # TODO
